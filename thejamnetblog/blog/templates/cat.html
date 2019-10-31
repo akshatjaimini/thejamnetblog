@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{cat}}{% endblock %}
+{% block body %}
+{% for post in bl reversed %}
+        <div class="container well row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10 cl card card-body bg-dark">
+                <h1 style="color:#ffffff;">{{post.title}}</h1>
+                <br>
+                <p style="color:#ffffff88;">Posted on {{post.date}} at {{post.time}}</p>
+                <br>
+                <article style="color:#ffffff77">
+                    {{post.blog}}
+                </article>
+                <hr color="#dddddd" width = "100%">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <br>
+    {% endfor %}
+    <script>document.body.scrollTop = 1000</script>
+{% endblock %}

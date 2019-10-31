@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+    <br>
+    <br>
+    <br>
+    {% for post in bl reversed %}
+        <div class="container row ">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10  card bg-dark special-card">
+                <h1 style="color:#ffffff;" class="card-header">{{post.title}}</h1>
+                <br>
+                <p style="color:#ffffff88;">Posted on {{post.date}} at {{post.time}}</p>
+                <br>
+                <article style="color:#ffffff77" class="card-body">
+                    {{post.blog}}
+                </article>
+                <hr color="#dddddd" width = "100%">
+                <br>
+                <br>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <br>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
